@@ -273,7 +273,7 @@ with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as 
             count = 1
 
         
-        cv2.line(image, (int(0.3*image_width), int(0.1*image_height)), (int(0.7*image_width), int(0.1*image_height)), (0, 255, 0))
+        cv2.line(image, (int(0.3*image_width), int(0.1*image_height)), (int(0.7*image_width), int(0.1*image_height)), (0, 255, 0), 2,)
         cv2.putText(
             image,
             "Head line",
@@ -283,7 +283,7 @@ with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as 
             (0, 255, 0),
             2,
         )
-        cv2.line(image, (int(0.3*image_width), int(0.95*image_height)), (int(0.7*image_width), int(0.95*image_height)), (0, 255, 0))
+        cv2.line(image, (int(0.3*image_width), int(0.95*image_height)), (int(0.7*image_width), int(0.95*image_height)), (0, 255, 0), 2,)
         cv2.putText(
             image,
             "Foot line",
@@ -332,13 +332,13 @@ with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as 
         # )
 
         #리셋스위치
-        cv2.circle(image, (reset_center_x, reset_center_y), 50, (0, 0, 255), 1)
+        cv2.circle(image, (reset_center_x, reset_center_y), 50, (0, 0, 255), 2)
         cv2.putText(
             image,
             "Reset",
-            (reset_center_x - int(radius / 2) , reset_center_y),
+            (reset_center_x - 30 , reset_center_y + 10),
             cv2.FONT_HERSHEY_SIMPLEX,
-            0.5,
+            0.7,
             (0, 0, 255),
             2,
         )
